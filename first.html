@@ -1,0 +1,258 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Harassment Reporting App
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
+ </head>
+ <body class="font-roboto bg-gray-100">
+  <div class="min-h-screen flex items-center justify-center bg-gray-100" id="login-page">
+   <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
+    <h2 class="text-2xl font-bold mb-6 text-center">
+     Login
+    </h2>
+    <form onsubmit="event.preventDefault(); showMainPage();">
+     <div class="mb-4">
+      <label class="block text-gray-700" for="email">
+       Email
+      </label>
+      <input class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600" id="email" name="email" required="" type="email"/>
+     </div>
+     <div class="mb-6">
+      <label class="block text-gray-700" for="password">
+       Password
+      </label>
+      <input class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600" id="password" name="password" required="" type="password"/>
+     </div>
+     <div class="flex items-center justify-between">
+      <button class="bg-purple-700 text-white px-4 py-2 rounded-lg hover:bg-purple-800 focus:outline-none focus:ring-2 focus:ring-purple-600" type="submit">
+       Login
+      </button>
+      <a class="text-purple-700 hover:underline" href="#" onclick="showSignUp()">
+       Don't have an account? Sign Up
+      </a>
+     </div>
+    </form>
+   </div>
+  </div>
+  <div class="min-h-screen flex items-center justify-center bg-gray-100 hidden" id="signup-page">
+   <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
+    <h2 class="text-2xl font-bold mb-6 text-center">
+     Sign Up
+    </h2>
+    <form onsubmit="event.preventDefault(); showMainPage();">
+     <div class="mb-4">
+      <label class="block text-gray-700" for="name">
+       Name
+      </label>
+      <input class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600" id="name" name="name" required="" type="text"/>
+     </div>
+     <div class="mb-4">
+      <label class="block text-gray-700" for="email">
+       Email
+      </label>
+      <input class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600" id="email" name="email" required="" type="email"/>
+     </div>
+     <div class="mb-6">
+      <label class="block text-gray-700" for="password">
+       Password
+      </label>
+      <input class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600" id="password" name="password" required="" type="password"/>
+     </div>
+     <div class="flex items-center justify-between">
+      <button class="bg-purple-700 text-white px-4 py-2 rounded-lg hover:bg-purple-800 focus:outline-none focus:ring-2 focus:ring-purple-600" type="submit">
+       Sign Up
+      </button>
+      <a class="text-purple-700 hover:underline" href="#" onclick="showLogin()">
+       Already have an account? Login
+      </a>
+     </div>
+    </form>
+   </div>
+  </div>
+  <div class="min-h-screen bg-gray-100 hidden" id="main-page">
+   <header class="bg-purple-700 text-white p-4">
+    <div class="container mx-auto flex justify-between items-center">
+     <h1 class="text-xl font-bold">
+      Harassment Reporting App
+     </h1>
+     <nav>
+      <ul class="flex space-x-4">
+       <li>
+        <a class="hover:underline" href="#">
+         Home
+        </a>
+       </li>
+       <li>
+        <a class="hover:underline" href="#">
+         Report
+        </a>
+       </li>
+       <li>
+        <a class="hover:underline" href="#">
+         Resources
+        </a>
+       </li>
+       <li>
+        <a class="hover:underline" href="#">
+         Profile
+        </a>
+       </li>
+      </ul>
+     </nav>
+    </div>
+   </header>
+   <main class="container mx-auto p-4">
+    <section class="mb-8">
+     <h2 class="text-2xl font-bold mb-4">
+      Report an Incident
+     </h2>
+     <form class="bg-white p-6 rounded-lg shadow-md">
+      <div class="mb-4">
+       <label class="block text-gray-700" for="incident-type">
+        Type of Incident
+       </label>
+       <select class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600" id="incident-type" name="incident-type" required="">
+        <option value="verbal-abuse">
+         Verbal Abuse
+        </option>
+        <option value="sexual-harassment">
+         Sexual Harassment
+        </option>
+        <option value="bullying">
+         Bullying
+        </option>
+        <option value="stalking">
+         Stalking
+        </option>
+        <option value="cyber-harassment">
+         Cyber Harassment
+        </option>
+        <option value="discrimination">
+         Discrimination
+        </option>
+        <option value="abuse-of-authority">
+         Abuse of Authority
+        </option>
+       </select>
+      </div>
+      <div class="mb-4">
+       <label class="block text-gray-700" for="location">
+        Location
+       </label>
+       <input class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600" id="location" name="location" required="" type="text"/>
+      </div>
+      <div class="mb-4">
+       <label class="block text-gray-700" for="time">
+        Time
+       </label>
+       <input class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600" id="time" name="time" required="" type="datetime-local"/>
+      </div>
+      <div class="mb-4">
+       <label class="block text-gray-700" for="details">
+        Details
+       </label>
+       <textarea class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600" id="details" name="details" rows="4"></textarea>
+      </div>
+      <div class="mb-4">
+       <label class="block text-gray-700" for="harasser-details">
+        Harasser Details
+       </label>
+       <input class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600" id="harasser-details" name="harasser-details" required="" type="text"/>
+      </div>
+      <button class="bg-purple-700 text-white px-4 py-2 rounded-lg hover:bg-purple-800 focus:outline-none focus:ring-2 focus:ring-purple-600" type="submit">
+       Submit Report
+      </button>
+     </form>
+    </section>
+    <section class="mb-8">
+     <h2 class="text-2xl font-bold mb-4">
+      Resources
+     </h2>
+     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div class="bg-white p-4 rounded-lg shadow-md">
+       <h3 class="text-xl font-bold mb-2">
+        Counseling Services
+       </h3>
+       <p>
+        Contact our university's counseling services for emotional support and guidance.
+       </p>
+      </div>
+      <div class="bg-white p-4 rounded-lg shadow-md">
+       <h3 class="text-xl font-bold mb-2">
+        Grievance Cell
+       </h3>
+       <p>
+        Reach out to the grievance cell for official complaints and follow-ups.
+       </p>
+      </div>
+      <div class="bg-white p-4 rounded-lg shadow-md">
+       <h3 class="text-xl font-bold mb-2">
+        Peer Support Groups
+       </h3>
+       <p>
+        Join peer support groups to share experiences and find solidarity.
+       </p>
+      </div>
+     </div>
+    </section>
+    <section>
+     <h2 class="text-2xl font-bold mb-4">
+      Recent News
+     </h2>
+     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div class="bg-white p-4 rounded-lg shadow-md">
+       <img alt="A group of students protesting against harassment in a university campus" class="mb-4 rounded-lg" height="200" src="https://storage.googleapis.com/a1aa/image/2nr4F4wihGI3NZeNybMQQUsXFPJilC5AjOooseI3Hnh6Ty6TA.jpg" width="300"/>
+       <h3 class="text-xl font-bold mb-2">
+        University Protest Against Harassment
+       </h3>
+       <p>
+        Students gathered to protest against the increasing incidents of harassment on campus.
+       </p>
+      </div>
+      <div class="bg-white p-4 rounded-lg shadow-md">
+       <img alt="A counseling session with a student and a counselor in a university setting" class="mb-4 rounded-lg" height="200" src="https://storage.googleapis.com/a1aa/image/FnHs9RPiGSIbIBUD70EqCN2KNA8QWOYPSw9rnoA8ACNfJZ9JA.jpg" width="300"/>
+       <h3 class="text-xl font-bold mb-2">
+        New Counseling Services Launched
+       </h3>
+       <p>
+        The university has launched new counseling services to support victims of harassment.
+       </p>
+      </div>
+      <div class="bg-white p-4 rounded-lg shadow-md">
+       <img alt="A seminar on harassment awareness being conducted in a university auditorium" class="mb-4 rounded-lg" height="200" src="https://storage.googleapis.com/a1aa/image/hXpkC0vRyf2SKyUAfv5Gvv3wAZdZwuPkKDzODxh0oTR9Ty6TA.jpg" width="300"/>
+       <h3 class="text-xl font-bold mb-2">
+        Harassment Awareness Seminar
+       </h3>
+       <p>
+        An awareness seminar was conducted to educate students about harassment and its impacts.
+       </p>
+      </div>
+     </div>
+    </section>
+   </main>
+  </div>
+  <script>
+   function showSignUp() {
+        document.getElementById('login-page').classList.add('hidden');
+        document.getElementById('signup-page').classList.remove('hidden');
+    }
+
+    function showLogin() {
+        document.getElementById('signup-page').classList.add('hidden');
+        document.getElementById('login-page').classList.remove('hidden');
+    }
+
+    function showMainPage() {
+        document.getElementById('login-page').classList.add('hidden');
+        document.getElementById('signup-page').classList.add('hidden');
+        document.getElementById('main-page').classList.remove('hidden');
+    }
+  </script>
+ </body>
+</html>
